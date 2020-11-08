@@ -1,6 +1,6 @@
 from phue import Bridge
 from time import sleep
-from datetime import datetime
+from datetime import datetime, timedelta
 from rgbxy import Converter
 
 
@@ -8,10 +8,24 @@ from rgbxy import Converter
 HUE_IP = "192.168.1.52"
 BULB_NAME = "Office color bulb"
 
-# schedule time, in this example is the actual time +/- 2 minutes in a sequence
+# schedule time, in this example is the actual time +/- 1 minute in a sequence
 actual_time = datetime.now()
-SCHEDULE1 = {"start": (actual_time.hour, actual_time.minute - 2), "stop": (actual_time.hour, actual_time.minute + 2)}
-SCHEDULE2 = {"start": (actual_time.hour, actual_time.minute + 3), "stop": (actual_time.hour, actual_time.minute + 5)}
+
+# get start stop time
+start_date, stop_date = actual_time - timedelta(minutes=1), actual_time + timedelta(minutes=1)
+
+SCHEDULE1 = {
+    "start": (start_date.hour, start_date.minute),
+    "stop": (stop_date.hour, stop_date.minute)
+}
+
+# get start stop time
+start_date, stop_date = actual_time + timedelta(minutes=2), actual_time + timedelta(minutes=3)
+
+SCHEDULE2 = {
+    "start": (start_date.hour, start_date.minute),
+    "stop": (stop_date.hour, stop_date.minute)
+}
 
 
 class ColorsXY:
