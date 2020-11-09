@@ -5,7 +5,7 @@ Create your own AI smart home!
 - jetson_configuration (configure the jetson nano)
 - philips_hue (setup and examples on how to use the Philips Hue bridge via Python)
 
-To learn more please visit my [website](https://davidforino-aisolutions.com/)!
+To learn more please visit my [website](https://davidforino-aisolutions.com/lesson-1-control-zigbee-devices-with-philips-hue-and-python/)!
 
 ## Usage:
 
