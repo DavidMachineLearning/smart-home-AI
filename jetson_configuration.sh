@@ -94,6 +94,11 @@ pip3 install -U torch-1.7.0-cp36-cp36m-linux_aarch64.whl
 pip install -U torchvision
 rm torch-1.7.0-cp36-cp36m-linux_aarch64.whl
 
+# install Torcht2TRT
+git clone https://github.com/NVIDIA-AI-IOT/torch2trt
+cd torch2trt
+echo $password | sudo -S python3 setup.py install
+
 # check the amount of ram in the Jetson to determine if you need to change the GUI
 totalram=$(awk '/^MemTotal:/{print $2}' /proc/meminfo)
 
